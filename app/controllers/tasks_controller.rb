@@ -10,19 +10,19 @@ class TasksController < ApplicationController
   end
   
   def new 
-    @task = Task.new
+    @task = Task.new 
   end
   
   def create
     @task = Task.new(task_params)
-    
-    if @task.save
-      flash[:success] = "新しいタスクを作成しました"
-      redirect_to @task
-    else
-      flash.now[:danger] = "タスクを作成できませんでした"
-      render :new
-    end
+     
+     if @task.save
+       flash[:success] = "新しいタスクを作成しました"
+       redirect_to @task
+     else
+       flash.now[:danger] = "タスクを作成できませんでした"
+       render :new
+     end
   end
   
   def edit
